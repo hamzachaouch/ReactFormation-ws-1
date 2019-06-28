@@ -12,6 +12,7 @@ class App extends Component {
       { id: 5, value: 1003 }
     ]
   };
+
   handleIncrement = idcounter => {
     // console.log(idcounter);
     const counters = [...this.state.counters];
@@ -36,7 +37,9 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar />
+        <Navbar
+          totlaCounters={this.state.counters.filter(c => c.value > 0).length}
+        />
         <div className="container">
           <Liste
             counters={this.state.counters}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-//import Counter from "./counter";
+
 class Header extends Component {
   state = {};
 
@@ -7,7 +7,10 @@ class Header extends Component {
     return (
       <nav className="navbar navbar-light bg-light">
         <a className="navbar-brand" href="#">
-          Navbar
+          Navbar{" "}
+          <span className="badge badge-pill badge-secondary">
+            {this.props.totlaCounters}
+          </span>
         </a>
       </nav>
     );
