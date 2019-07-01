@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
+import { Provider } from "react-redux";
+import store from "./store";
 import Liste from "./components/liste";
 import Navbar from "./components/Navbar";
 class App extends Component {
@@ -35,8 +37,9 @@ class App extends Component {
   };
 
   render() {
+    console.log(store.getState(), " hamza");
     return (
-      <React.Fragment>
+      <Provider store={store}>
         <Navbar
           totlaCounters={this.state.counters.filter(c => c.value > 0).length}
         />
@@ -48,7 +51,7 @@ class App extends Component {
             onIncrement={this.handleIncrement}
           />
         </div>
-      </React.Fragment>
+      </Provider>
     );
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import ReduxComponenet from "./reduxComponenet";
 class Header extends Component {
   state = {};
 
@@ -12,6 +12,8 @@ class Header extends Component {
             {this.props.totlaCounters}
           </span>
         </a>
+
+        <ReduxComponenet />
       </nav>
     );
   }
